@@ -2,7 +2,7 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" default-locale="en-US" version="1.0" demote-non-dropping-particle="sort-only" page-range-format="expanded">
   <info>
     <title>JSC journal</title>
-	<id>http://csl.mendeley.com/styles/7439013/JSC</id>
+	<id>https://github.com/stsouko/csl/blob/master/JSC</id>
     <link href="https://github.com/stsouko/csl/blob/master/JSC" rel="self"/>
     <link href="https://github.com/stsouko/csl/blob/master/README.md" rel="documentation"/>
     <author>
