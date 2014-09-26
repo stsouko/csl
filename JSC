@@ -3,8 +3,8 @@
   <info>
     <title>JSC journal</title>
 	<id>http://csl.mendeley.com/styles/7439013/JSC</id>
-    <link href="http://www.zotero.org/styles/gost-r-7-0-5-2008-numeric" rel="self"/>
-    <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
+    <link href="https://github.com/stsouko/csl/blob/master/JSC" rel="self"/>
+    <link href="https://github.com/stsouko/csl/blob/master/README.md" rel="documentation"/>
     <author>
       <name>Ramil Nugmanov</name>
       <email>stsouko@live.ru</email>
