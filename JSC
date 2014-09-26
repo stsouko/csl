@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" default-locale="en-US" version="1.0" demote-non-dropping-particle="sort-only" page-range-format="expanded">
+  <info>
+    <title>JSC journal</title>
+	<id>http://csl.mendeley.com/styles/7439013/JSC</id>
+    <link href="http://www.zotero.org/styles/gost-r-7-0-5-2008-numeric" rel="self"/>
+    <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
+    <author>
+      <name>Ramil Nugmanov</name>
+      <email>stsouko@live.ru</email>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+    <summary>стиль заточен под журнал структурной химии</summary>
+    <published>2014-09-26T10:40:00+06:00</published>
+	<updated>2014-09-26T10:40:00+06:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="authors">
+    <names variable="author translator editor" delimiter=", ">
+      <label form="verb-short" suffix=" "/>
+      <name delimiter-precedes-last="always" et-al-min="6" et-al-use-first="6" initialize-with="." name-as-sort-order="all" sort-separator=" "/>
+    </names>
+  </macro>
+  <macro name="issued-year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" suffix=". "/>
+      <text macro="authors"/>
+      <choose>
+        <if type="book" match="any">
+          <text variable="title" prefix=" "/>
+            <group delimiter=", " prefix=". – ">
+              <group delimiter=": ">
+                <text variable="publisher-place"/>
+                <text variable="publisher"/>
+              </group>
+              <text macro="issued-year"/>
+            </group>
+        </if>
+        <else-if type="webpage" match="any">
+          <text variable="URL" prefix=" " />
+        </else-if>
+        <else-if type="article" match="any">
+          <text variable="title" prefix=" "/>
+            <group delimiter=", " prefix=". – ">
+              <text variable="publisher-place"/>
+              <text variable="publisher"/>
+              <text macro="issued-year"/>
+            </group>
+        </else-if>
+        <else>
+          <group delimiter=". – " prefix=" // ">
+            <text variable="container-title" form="short"/>
+            <text macro="issued-year"/>
+            <group delimiter=", ">
+              <text variable="volume" font-weight="bold"/>
+              <text variable="issue" prefix="N "/>
+            </group>
+            <group>
+              <text value="P. "/>
+              <text variable="page"/>
+            </group>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
