@@ -38,14 +38,12 @@
       <date-part name="year"/>
     </date>
   </macro>
-  <macro name="issued-data-full">
-    <date variable="issued">
-      <group delimiter=".">
-        <date-part name="day"/>
-        <date-part name="month" form="numeric"/>
-        <date-part name="year"/>
-      </group>
-    </date>
+  <macro name="accessed">
+    <date variable="accessed">
+	  <date-part name="day" form="numeric-leading-zeros" suffix="."/>
+	  <date-part name="month" form="numeric-leading-zeros" suffix="."/>
+	  <date-part name="year"/>
+	</date>
   </macro>
   <citation collapse="citation-number">
     <sort>
@@ -84,20 +82,47 @@
               <text variable="publisher"/>
             </group>
             <text macro="issued-year"/>
+			<choose>
+		      <if variable="genre" match="any">
+                <text variable="page" prefix="C. "/>
+	  		  </if>
+			  <else>
+                <text variable="page" prefix="P. "/>
+              </else>
+			</choose>
           </if>
-          <else-if type="patent">
+          <else-if type="patent" match="any">
             <text variable="publisher"/>
             <text value="Опубл."/>
-            <text macro="issued-data-full"/>
+            <text macro="accessed"/>
           </else-if>
-          <else-if type="article" match="any">
-            <text variable="publisher"/>
+          <else-if type="webpage" match="any">
+            <text variable="container-title"/>
             <text macro="issued-year"/>
-            <group delimiter=", ">
-              <text variable="volume" prefix="V. "/>
-              <text variable="issue" prefix="Iss. "/>
-            </group>
-            <text variable="page" prefix="P. "/>
+			<group delimiter=" ">
+              <text variable="URL" prefix="URL: "/>
+			  <text macro="accessed" prefix="(дата обращения: " suffix=")"/>
+			</group>
+		  </else-if>
+          <else-if type="article-journal" match="any">
+            <text variable="container-title" form="short"/>
+            <text macro="issued-year"/>
+			  <choose>
+			    <if variable="genre" match="any">
+				  <group delimiter=", ">
+                    <text variable="volume" prefix="Т. "/>
+				    <text variable="issue" prefix="Вып. "/>
+				  </group>
+				  <text variable="page" prefix="C. "/>
+				</if>
+				<else>
+				  <group delimiter=", ">
+                    <text variable="volume" prefix="V. "/>
+				    <text variable="issue" prefix="Iss. "/>
+				  </group>
+				  <text variable="page" prefix="P. "/>
+                </else>
+			  </choose>
           </else-if>
           <else-if type="paper-conference" match="any">
             <text variable="container-title" suffix=". Тезисы докладов"/>
