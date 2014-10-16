@@ -17,7 +17,7 @@
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <macro name="authors">
-    <names variable="author translator editor" delimiter=", " prefix=" / ">
+    <names variable="translator author editor" delimiter=", " prefix=" / ">
       <label form="verb-short" suffix=" "/>
       <name delimiter-precedes-last="always" et-al-min="13" et-al-use-first="13" initialize-with="." sort-separator=" "/>
     </names>
