@@ -3,7 +3,7 @@
   <info>
     <title>JSC journal</title>
 	<id>https://github.com/stsouko/csl/blob/master/JSC</id>
-    <link href="https://github.com/stsouko/csl/blob/master/JSC" rel="self"/>
+    <link href="https://github.com/stsouko/csl/raw/master/JSC" rel="self"/>
     <link href="https://github.com/stsouko/csl/blob/master/README.md" rel="documentation"/>
     <author>
       <name>Ramil Nugmanov</name>
