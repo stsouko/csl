@@ -39,7 +39,7 @@
     </date>
   </macro>
   <macro name="accessed">
-    <date variable="issued">
+    <date variable="accessed">
 	  <date-part name="day" form="numeric-leading-zeros" suffix="."/>
 	  <date-part name="month" form="numeric-leading-zeros" suffix="."/>
 	  <date-part name="year"/>
