@@ -3,7 +3,7 @@
   <info>
     <title>Russian GOST</title>
     <id>https://github.com/stsouko/csl/blob/master/GOST</id>
-    <link href="https://github.com/stsouko/csl/blob/master/GOST" rel="self"/>
+    <link href="https://github.com/stsouko/csl/raw/master/GOST" rel="self"/>
     <link href="https://github.com/stsouko/csl/blob/master/README.md" rel="documentation"/>
     <author>
       <name>Ramil Nugmanov</name>
