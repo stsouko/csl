@@ -37,13 +37,13 @@
   </citation>
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout suffix=".">
-      <text variable="citation-number" suffix=". "/>
+        <text variable="citation-number" suffix="]" prefix="["/>
         <text macro="authors"/>
         <group delimiter=". " prefix=" ">
             <text variable="title"/>
             <choose>
                 <if type="book" match="any">
-                  <group delimiter=": ">
+                  <group delimiter=": " font-style="italic">
                     <text variable="publisher-place"/>
                     <text variable="publisher"/>
                   </group>
@@ -64,7 +64,7 @@
                     <text variable="publisher"/>
                 </else-if>
                 <else>
-                    <text variable="container-title" form="short"/>
+                    <text variable="container-title" form="short" font-style="italic"/>
                     <text macro="issued-year" font-weight="bold"/>
                     <choose>
                       <if variable="genre" match="any">
