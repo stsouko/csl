@@ -27,6 +27,23 @@
       <date-part name="year"/>
     </date>
   </macro>
+  <macro name="book">
+    <group delimiter=". ">
+      <group delimiter=": " font-style="italic">
+        <text variable="publisher-place"/>
+        <text variable="publisher"/>
+      </group>
+      <text macro="issued-year" font-weight="bold" />
+      <choose>
+          <if variable="genre" match="any">
+            <text variable="page" suffix="с."/>
+          </if>
+          <else>
+            <text variable="page" suffix="p."/>
+          </else>
+      </choose>
+    </group>
+  </macro>
   <citation collapse="citation-number">
     <sort>
       <key variable="citation-number"/>
@@ -43,20 +60,19 @@
             <text variable="title"/>
             <choose>
                 <if type="book" match="any">
-                  <group delimiter=": " font-style="italic">
-                    <text variable="publisher-place"/>
-                    <text variable="publisher"/>
-                  </group>
-                  <text macro="issued-year" font-weight="bold" />
+                  <text macro="book"/>
+                </if>
+                <else-if type="chapter" match="any">
                   <choose>
                       <if variable="genre" match="any">
-                        <text variable="page" suffix="с."/>
+                        <text variable="container-title" prefix="В: "/>
                       </if>
                       <else>
-                        <text variable="page" suffix="p."/>
+                        <text variable="container-title" prefix="In: "/>
                       </else>
                   </choose>
-                </if>
+                  <text macro="book"/>
+                </else-if>
                 <else-if type="webpage" match="any">
                   <text variable="URL"/>
                 </else-if>
