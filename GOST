@@ -90,7 +90,7 @@
           </if>
           <else-if type="patent" match="any">
             <text variable="publisher"/>
-            <text macro="accessed" prefix="Опубл. "/>
+            <text macro="issued-year" prefix="Опубл. "/>
           </else-if>
           <else-if type="webpage" match="any">
             <text variable="container-title"/>
